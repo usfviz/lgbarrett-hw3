@@ -1,13 +1,17 @@
-rm(list = ls ())
-cat('\014')
+if (!require("shiny")) {
+  install.packages("shiny", repos = "http://cran.us.r-project.org")
+}
 
-library(shiny)
-library(ggplot2)
-library(ggvis)
-library(GGally)
+if (!require("ggplot2")) {
+  install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+}
+
+if (!require("GGally")) {
+  install.packages("GGally", repos = "http://cran.us.r-project.org")
+}
 
 
-facebook_data <- read.table("Facebook_metrics/dataset_Facebook.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+facebook_data <- read.table("dataset_Facebook.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
 
 facebook_data$percent_like <- facebook_data$like/facebook_data$Total.Interactions
 facebook_data$percent_comment <- facebook_data$comment/facebook_data$Total.Interactions
