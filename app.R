@@ -10,6 +10,10 @@ if (!require("GGally")) {
   install.packages("GGally", repos = "http://cran.us.r-project.org")
 }
 
+if (!require("dplyr")) {
+  install.packages("dplyr", repos = "http://cran.us.r-project.org")
+}
+
 
 facebook_data <- read.table("dataset_Facebook.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
 
